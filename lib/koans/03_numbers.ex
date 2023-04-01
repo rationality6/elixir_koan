@@ -118,16 +118,16 @@ defmodule Numbers do
   koan "Does my number exist in the range?" do
     range = Range.new(1, 10)
 
-    assert 4 in range == ___
-    assert 10 in range == ___
-    assert 0 in range == ___
+    assert 4 in range == true
+    assert 10 in range == true
+    assert 0 in range == false
   end
 
   def is_range?(%Range{}), do: true
   def is_range?(_), do: false
 
   koan "Is this a range?" do
-    assert is_range?(1..10) == ___
-    assert is_range?(0) == ___
+    assert is_range?(1..10) == true
+    assert is_range?(0) == false
   end
 end

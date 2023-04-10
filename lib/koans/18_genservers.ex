@@ -139,14 +139,14 @@ defmodule GenServers do
 
   koan "Our server works but it's pretty ugly to use; so lets use a cleaner interface" do
     Laptop.start("EL!73")
-    assert Laptop.unlock("EL!73") == {:error, "Incorrect password!"}
+    assert Laptop.unlock("EL!73") == {:ok, "Laptop unlocked!"}
   end
 
   koan "Let's use the remaining functions in the external API" do
     Laptop.start("EL!73")
 
     {_, response} = Laptop.unlock("EL!73")
-    assert response == "Incorrect password!"
+    assert response == "Laptop unlocked!"
 
     Laptop.change_password("EL!73", "Elixir")
 
